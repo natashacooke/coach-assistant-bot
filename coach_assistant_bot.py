@@ -9,7 +9,8 @@ import os
 
 # Загрузка токена из файла config.json
 # Загрузка токена из переменной окружения
-TOKEN = os.environ.get('BOT_TOKEN', 'YOUR_TOKEN_HERE')bot = telebot.TeleBot(TOKEN)
+TOKEN = os.environ.get('BOT_TOKEN', 'YOUR_TOKEN_HERE')
+bot = telebot.TeleBot(TOKEN)
 
 # Хранилище данных пользователя
 user_data = {
