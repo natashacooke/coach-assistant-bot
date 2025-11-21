@@ -8,15 +8,8 @@ import json
 import os
 
 # Загрузка токена из файла config.json
-def load_config():
-    if os.path.exists('config.json'):
-        with open('config.json', 'r', encoding='utf-8') as f:
-            return json.load(f)
-    return {}
-
-config = load_config()
-TOKEN = config.get('token', 'YOUR_TOKEN_HERE')
-bot = telebot.TeleBot(TOKEN)
+# Загрузка токена из переменной окружения
+TOKEN = os.environ.get('BOT_TOKEN', 'YOUR_TOKEN_HERE')bot = telebot.TeleBot(TOKEN)
 
 # Хранилище данных пользователя
 user_data = {
